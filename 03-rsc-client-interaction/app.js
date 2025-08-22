@@ -8,7 +8,7 @@ import { serialize } from "./utils/serialize.js";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 const ROOT = join(__dirname, ""); // project root
 const CLIENT = join(ROOT, "");
-const manifest = JSON.parse(readFileSync(join(ROOT, "manifest.json"), "utf8"));
+const PORT = 3003;
 
 const mime = {
     ".html": "text/html",
@@ -59,6 +59,6 @@ function serveStatic(req, res) {
     res.end(readFileSync(filePath));
 }
 
-server.listen(3000, () => {
-    console.log("http://localhost:3000");
+server.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
 });
