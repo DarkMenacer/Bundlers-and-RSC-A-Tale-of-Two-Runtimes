@@ -11,8 +11,6 @@ export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
     cafeDiv.appendChild(button);
     appDiv.appendChild(cafeDiv);
 
-    console.log("Divs -> ", cafeDiv, appDiv);
-
     // Function to dynamically import modules
     function showMenu() {
         if (showCappuccino) {

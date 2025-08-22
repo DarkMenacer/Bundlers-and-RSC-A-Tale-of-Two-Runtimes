@@ -1,5 +1,4 @@
-export function Cafe({ showCappuccino, showBlack }) {
-    console.log("Cafe props -> ", showCappuccino, showBlack);
+export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
     // Create a div with a black background and a button
     const appDiv = document.getElementById("app");
     const cafeDiv = document.createElement("div");
@@ -12,18 +11,16 @@ export function Cafe({ showCappuccino, showBlack }) {
     cafeDiv.appendChild(button);
     appDiv.appendChild(cafeDiv);
 
-    console.log("Divs -> ", cafeDiv, appDiv);
-
     // Function to dynamically import modules
     function showMenu() {
-        if (showCappuccino === "true") {
+        if (showCappuccino) {
             import("./Cappuccino.js").then((module) => {
                 const Cappuccino = module.Cappuccino;
                 Cappuccino();
             });
         }
 
-        if (showBlack === "true") {
+        if (showBlack) {
             import("./Black.js").then((module) => {
                 const Black = module.Black;
                 Black();

@@ -1,10 +1,5 @@
-export function Espresso() {
-    const appDiv = document.getElementById("app");
-    const espressoDiv = document.createElement("div");
-    espressoDiv.className = "espresso-container";
+import { htmlWriter } from "./htmlWriter.js";
 
-    const espresso = document.createElement("span");
-    espresso.textContent = "Espresso made out of 100% Arabica beans.";
-    espressoDiv.appendChild(espresso);
-    appDiv.appendChild(espressoDiv);
+export function Espresso(parentElement) {
+    htmlWriter("espresso", "Espresso shot", parentElement);
 }

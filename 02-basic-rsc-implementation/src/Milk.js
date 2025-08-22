@@ -1,10 +1,9 @@
-export function Milk() {
-    const appDiv = document.getElementById("app");
-    const milkDiv = document.createElement("div");
-    milkDiv.className = "milk-container";
+import { htmlWriter } from "./htmlWriter.js";
 
-    const milk = document.createElement("span");
-    milk.textContent = "Milk added: 200ml of whole milk.";
-    milkDiv.appendChild(milk);
-    appDiv.appendChild(milkDiv);
+export function Milk() {
+    htmlWriter(
+        "milk",
+        "Milk: Steamed milk and milk foam.",
+        "cappuccino-container"
+    );
 }

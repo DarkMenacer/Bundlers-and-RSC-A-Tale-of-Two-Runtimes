@@ -36,6 +36,7 @@ export function deserialize(payload, root, REGISTRY) {
     const mount = REGISTRY[entry.name];
     if (!slot || !mount) return;
     const node = mount(entry.props || {});
+    if (!node) return;
     slot.replaceWith(node);
 }
 
