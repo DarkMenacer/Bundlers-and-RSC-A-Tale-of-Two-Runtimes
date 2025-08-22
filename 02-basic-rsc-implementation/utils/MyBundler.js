@@ -1,13 +1,16 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { fileURLToPath } from "node:url";
 
 // Match "import ... from '...js'", "import '...js'"
 const IMPORT_REGEX = [
     /import\s+[^'"]+\s+from\s+['"]([^'"]+\.js)['"];/g,
     /import\s+['"]([^'"]+\.js)['"]/g,
+    /import\(\s*['"]([^'"]+\.js)['"]\s*\)/g,
 ];
-const CODE_SOURCE = path.resolve("../src") + "/";
-const MANIFEST_OUTPUT = "../manifest.json";
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
+const CODE_SOURCE = path.join(__dirname, "../src") + "/";
+const MANIFEST_OUTPUT = path.join(__dirname, "../manifest.json");
 const depends = {};
 
 function cleanPath(filePath) {
