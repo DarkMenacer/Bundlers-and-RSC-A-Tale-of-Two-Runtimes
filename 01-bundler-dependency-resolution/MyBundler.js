@@ -29,9 +29,11 @@ function dependencyResolution(entryPath) {
 	const topologicalOrder = [];
 
 	function generateDependencyGraph(entry) {
-		if (visited.has(entry)) return;
-
 		entry = CODE_SOURCE + entry;
+		if (visited.has(entry)) {
+			return;
+		}
+
 		visited.add(entry);
 		stack.push(entry);
 		gatherImports(entry).forEach((dependency) => generateDependencyGraph(dependency));
