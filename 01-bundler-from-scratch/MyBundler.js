@@ -4,7 +4,7 @@ import * as path from 'node:path';
 // Match "import ... from '...js'", "import '...js'"
 const IMPORT_REGEX = [/import\s+[^'"]+\s+from\s+['"]([^'"]+\.js)['"];/g, /import\s+['"]([^'"]+\.js)['"]/g];
 const CODE_SOURCE = path.resolve('./src') + '/';
-const ENTRY = './A.js'
+const ENTRY = './Cafe.js'
 const BUILD_OUTPUT = './bundle.js';
 
 function dependencyResolution(entryPath) {
@@ -15,7 +15,6 @@ function dependencyResolution(entryPath) {
 	function gatherImports(filePath) {
 		const fileCode = fs.readFileSync(filePath, 'utf8');
 		const imports = [];
-		let match;
 		IMPORT_REGEX.forEach((regex) => {
 			let match;
 			while ((match = regex.exec(fileCode))) {
