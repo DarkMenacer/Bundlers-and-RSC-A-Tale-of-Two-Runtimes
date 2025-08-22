@@ -1,8 +1,1 @@
-{
-    "Black": ["Espresso.js", "Black.js"],
-    "Cafe": ["Espresso.js", "Milk.js", "Cappuccino.js", "Black.js", "Cafe.js"],
-    "Cappuccino": ["Espresso.js", "Milk.js", "Cappuccino.js"],
-    "Espresso": ["Espresso.js"],
-    "Milk": ["Milk.js"],
-    "Sugar": ["Sugar.js"]
-}
+{"Black":["htmlWriter.js","Espresso.js","Black.js"],"Cafe":["htmlWriter.js","Espresso.js","Milk.js","Cappuccino.js","Black.js","Cafe.js"],"Cappuccino":["htmlWriter.js","Espresso.js","Milk.js","Cappuccino.js"],"Espresso":["htmlWriter.js","Espresso.js"],"htmlWriter":["htmlWriter.js"],"Milk":["htmlWriter.js","Milk.js"],"Sugar":["htmlWriter.js","Sugar.js"]}
