@@ -1,3 +1,3 @@
-export function Sugar(){
+export function Sugar() {
 	console.log('\tSugar');
 }

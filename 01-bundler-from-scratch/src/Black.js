@@ -1,6 +1,6 @@
-import {Espresso} from "./Espresso.js";
+import { Espresso } from './Espresso.js';
 
-export function Black (){
+export function Black() {
 	console.log('Black contents:');
 	Espresso();
 }

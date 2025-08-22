@@ -1,10 +1,9 @@
-import {Black} from "./Black.js";
-import {Cappuccino} from "./Cappuccino.js";
-import {Milk} from "./Milk.js";
+import { Black } from './Black.js';
+import { Cappuccino } from './Cappuccino.js';
 
-export function Menu (){
-	Cappuccino()
-	Black()
+export function Cafe() {
+	Cappuccino();
+	Black();
 }
 
-Menu()
+Cafe();

@@ -1,3 +1,3 @@
-export function Espresso (){
-	console.log('\tExpresso')
+export function Espresso() {
+	console.log('\tExpresso');
 }

@@ -1,3 +1,3 @@
-export function Milk(){
-	console.log('\tMilk')
+export function Milk() {
+	console.log('\tMilk');
 }
