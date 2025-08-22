@@ -37,10 +37,6 @@ const server = http.createServer((req, res) => {
         `;
         const payload = serialize(html); // { html, components: [...] }
         // Attach manifest for client to know the mappings
-        console.log(
-            "Computed Preload URLs: ",
-            computePreload(payload.components)
-        );
         payload.preload = computePreload(payload.components);
         res.writeHead(200, {
             "Content-Type": "application/json",
