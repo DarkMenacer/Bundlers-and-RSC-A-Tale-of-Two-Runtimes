@@ -13,14 +13,14 @@ export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
 
     // Function to dynamically import modules
     function showMenu() {
-        if (showCappuccino === "true") {
+        if (showCappuccino == "true") {
             import("./Cappuccino.js").then((module) => {
                 const Cappuccino = module.Cappuccino;
                 Cappuccino();
             });
         }
 
-        if (showBlack === "true") {
+        if (showBlack == "true") {
             import("./Black.js").then((module) => {
                 const Black = module.Black;
                 Black();

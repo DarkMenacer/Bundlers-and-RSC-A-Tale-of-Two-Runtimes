@@ -20,7 +20,7 @@ function ServerComponent({ name }) {
     return `<p style="font-style:italic">Hello ${name} from the Server Component</p>`;
 }
 
-function ClientComponent({ showCappuccino, showBlack }) {
+function ClientComponent(showCappuccino, showBlack) {
     return `
         <Cafe showCappuccino=${showCappuccino} showBlack=${showBlack} />
     `;
@@ -32,7 +32,8 @@ const server = http.createServer((req, res) => {
             <div>
                 <h1>RSC simplified demo</h1>
                 ${ServerComponent({ name: "Bangalore" })}
-            </div>
+                ${ClientComponent()}
+                </div>
         `;
         const payload = serialize(html); // { html, components: [...] }
         res.writeHead(200, {

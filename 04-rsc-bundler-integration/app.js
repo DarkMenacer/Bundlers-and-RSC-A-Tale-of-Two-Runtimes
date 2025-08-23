@@ -22,7 +22,7 @@ function ServerComponent({ name }) {
 }
 
 const server = http.createServer((req, res) => {
-    if (req.url.startsWith("/page")) {
+    if (req.url.startsWith("/rsc")) {
         const db = JSON.parse(readFileSync(join(ROOT, "db.json"), "utf8"));
         // Determine availability based on db.json
         const showCappuccino = db.isMilkAvailable;

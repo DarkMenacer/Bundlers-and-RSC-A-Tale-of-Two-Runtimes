@@ -1,15 +1,28 @@
 export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
-    createCafeHTML(showMenu);
+    // Create a div with a black background and a button
+    const appDiv = document.getElementById("app");
+    const cafeDiv = document.createElement("div");
+    cafeDiv.className = "cafe-container";
+
+    const button = document.createElement("button");
+    button.textContent = "Show Menu";
+    button.onclick = showMenu;
+
+    cafeDiv.appendChild(button);
+    appDiv.appendChild(cafeDiv);
+
     // Function to dynamically import modules
     function showMenu() {
-        if (showCappuccino === "true") {
+        console.log("Inside", showCappuccino, showBlack);
+        if (showCappuccino == "true") {
+            console.log("here");
             import("./Cappuccino.js").then((module) => {
                 const Cappuccino = module.Cappuccino;
                 Cappuccino();
             });
         }
 
-        if (showBlack === "true") {
+        if (showBlack == "true") {
             import("./Black.js").then((module) => {
                 const Black = module.Black;
                 Black();
@@ -23,20 +36,6 @@ export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
             cafeDiv.appendChild(noItems);
         }
     }
-}
-
-function createCafeHTML(showMenu) {
-    // Create a div with a black background and a button
-    const appDiv = document.getElementById("app");
-    const cafeDiv = document.createElement("div");
-    cafeDiv.className = "cafe-container";
-
-    const button = document.createElement("button");
-    button.textContent = "Show Menu";
-    button.onclick = showMenu;
-
-    cafeDiv.appendChild(button);
-    appDiv.appendChild(cafeDiv);
 }
 
 // Cafe();

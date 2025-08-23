@@ -9,7 +9,7 @@ import { Cafe } from "./src/Cafe.js";
 const REGISTRY = { Cafe };
 
 async function main() {
-    const res = await fetch("/page");
+    const res = await fetch("/rsc");
 
     const data = await res.json(); // { html, components }
     console.log("Data received: ", data);
