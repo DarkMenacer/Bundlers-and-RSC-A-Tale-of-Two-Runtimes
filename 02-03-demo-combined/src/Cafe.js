@@ -1,4 +1,4 @@
-export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
+export function Cafe({ showCappuccino = "true", showBlack = "true" } = {}) {
     // Create a div with a black background and a button
     const appDiv = document.getElementById("app");
     const cafeDiv = document.createElement("div");
@@ -13,9 +13,7 @@ export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
 
     // Function to dynamically import modules
     function showMenu() {
-        console.log("Inside", showCappuccino, showBlack);
         if (showCappuccino == "true") {
-            console.log("here");
             import("./Cappuccino.js").then((module) => {
                 const Cappuccino = module.Cappuccino;
                 Cappuccino();

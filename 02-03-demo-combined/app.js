@@ -16,24 +16,23 @@ const mime = {
     ".json": "application/json",
 };
 
+//----------------------------------------------------------------------
+
 function ServerComponent({ name }) {
     return `<p style="font-style:italic">Hello ${name} from the Server Component</p>`;
 }
 
-function ClientComponent(showCappuccino, showBlack) {
-    return `
-        <Cafe showCappuccino=${showCappuccino} showBlack=${showBlack} />
-    `;
-}
-
 const server = http.createServer((req, res) => {
     if (req.url.startsWith("/rsc")) {
+        const db = JSON.parse(readFileSync(join(ROOT, "db.json"), "utf8"));
+        const showCappuccino = db.isMilkAvailable && db.isEspressoAvailable;
+        const showBlack = db.isEspressoAvailable;
         const html = `
             <div>
                 <h1>RSC simplified demo</h1>
                 ${ServerComponent({ name: "Bangalore" })}
-                ${ClientComponent()}
-                </div>
+                <Cafe showCappuccino="${showCappuccino}" showBlack="${showBlack}" />
+            </div>
         `;
         const payload = serialize(html); // { html, components: [...] }
         res.writeHead(200, {
@@ -63,3 +62,8 @@ function serveStatic(req, res) {
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
+
+// const db = JSON.parse(readFileSync(join(ROOT, "db.json"), "utf8"));
+// const showCappuccino = db.isMilkAvailable && db.isEspressoAvailable;
+// const showBlack = db.isEspressoAvailable;
+// <Cafe showCappuccino="${showCappuccino}" showBlack="${showBlack}" />

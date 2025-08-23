@@ -1,4 +1,4 @@
-export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
+export function Cafe({ showCappuccino = "true", showBlack = "true" } = {}) {
     // Create a div with a black background and a button
     const appDiv = document.getElementById("app");
     const cafeDiv = document.createElement("div");

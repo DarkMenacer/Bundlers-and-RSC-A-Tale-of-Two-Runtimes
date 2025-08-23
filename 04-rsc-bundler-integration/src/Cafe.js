@@ -10,17 +10,22 @@ export function Cafe({ showCappuccino = true, showBlack = true } = {}) {
 
     cafeDiv.appendChild(button);
     appDiv.appendChild(cafeDiv);
+    showCappuccino = Boolean(showCappuccino);
+    showBlack = Boolean(showBlack);
 
     // Function to dynamically import modules
     function showMenu() {
-        if (showCappuccino == "true") {
+        console.log("Inside", typeof showCappuccino, showBlack);
+
+        if (showCappuccino == true) {
+            console.log("here");
             import("./Cappuccino.js").then((module) => {
                 const Cappuccino = module.Cappuccino;
                 Cappuccino();
             });
         }
 
-        if (showBlack == "true") {
+        if (showBlack == true) {
             import("./Black.js").then((module) => {
                 const Black = module.Black;
                 Black();
