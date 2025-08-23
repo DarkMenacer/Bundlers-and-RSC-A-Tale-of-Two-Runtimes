@@ -1,3 +1,3 @@
 export function Espresso() {
-  console.log("\tEspresso");
+  console.log("\tEspresso shot");
 }

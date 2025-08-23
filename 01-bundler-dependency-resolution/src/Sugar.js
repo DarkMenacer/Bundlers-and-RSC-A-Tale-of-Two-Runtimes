@@ -1,3 +1,3 @@
 export function Sugar() {
-	console.log('\tSugar');
+	console.log('\tSugar: Sweetens the Coffee');
 }
