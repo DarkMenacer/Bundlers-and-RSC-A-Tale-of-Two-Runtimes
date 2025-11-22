@@ -3,8 +3,8 @@ import { Cappuccino } from './Cappuccino.js';
 
 export function Cafe() {
 	console.log('Menu');
-	Cappuccino();
 	Black();
+	Cappuccino();
 }
 
 Cafe();
