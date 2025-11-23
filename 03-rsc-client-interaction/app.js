@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
     if (req.url.startsWith("/rsc")) {
         const db = JSON.parse(readFileSync(join(ROOT, "db.json"), "utf8"));
         // Determine availability based on db.json
-        const showCappuccino = db.isMilkAvailable;
+        const showCappuccino = db.isMilkAvailable && db.isEspressoAvailable;
         const showBlack = db.isEspressoAvailable;
 
         const html = `
