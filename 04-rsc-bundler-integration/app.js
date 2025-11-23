@@ -27,6 +27,7 @@ const server = http.createServer((req, res) => {
         // Determine availability based on db.json
         const showCappuccino = db.isMilkAvailable;
         const showBlack = db.isEspressoAvailable;
+        console.log(showBlack, showCappuccino);
 
         const html = `
             <div>
