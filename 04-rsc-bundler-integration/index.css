@@ -1,15 +1,23 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(32, 22, 34);
+    color: #eee;
+}
+
 .cafe-container {
-    color: white;
+    color: #f5e9f8;
     padding: 20px;
     text-align: center;
+    max-width: 500px;
+    margin: 40px auto;
+    background: rgba(40, 30, 44, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
 }
 
 .cafe-container button {
-    background: linear-gradient(
-        135deg,
-        #6b2f61,
-        #a070be
-    ); /* gradient with complementary colors */
+    background: linear-gradient(135deg, #4e1f48, #6f4a8b);
     color: white;
     border: none;
     border-radius: 8px;
@@ -17,29 +25,14 @@
     cursor: pointer;
     font-size: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    display: block;
+    margin: 0 auto 24px auto;
 }
 
 .cafe-container button:hover {
     transform: translateY(-2px);
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
-}
-.cafe-container {
-    color: #222;
-    padding: 20px;
-    text-align: center;
-    max-width: 500px;
-    margin: 40px auto;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(107, 47, 97, 0.08);
-    position: relative;
-}
-
-.cafe-container button {
-    /* ...existing code... */
-    display: block;
-    margin: 0 auto 24px auto; /* Center button and add space below */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.6);
 }
 
 .sugar-container,
@@ -51,16 +44,16 @@
     margin-bottom: 8px;
     font-size: 18px;
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #3d1c3a;
-    background: rgba(255, 255, 255, 0.6);
+    color: #f4e8f7;
+    background: rgba(110, 70, 125, 0.55);
     border-radius: 8px;
-    padding: 8px 0;
-    box-shadow: 0 1px 4px rgba(160, 112, 190, 0.07);
+    padding: 10px 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.55),
+        inset 0 0 8px rgba(255, 255, 255, 0.06);
+
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-}
-body {
-    font-family: sans-serif;
-    background-color: rgb(255, 215, 252);
 }
